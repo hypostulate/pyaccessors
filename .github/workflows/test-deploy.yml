@@ -1,13 +1,14 @@
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
-name: Test Deploy
+name: Deploy to TestPyPi
 
 on:
   push:
     branches: [ staging ]
-  pull_request:
-    branches: [ staging ]
+    paths-ignore:
+    - '.github/**'
+    - 'README.md'
 
 jobs:
   build:
@@ -39,6 +40,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python
+      if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')
       uses: actions/setup-python@v2
       with:
         python-version: '3.x'
