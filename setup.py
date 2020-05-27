@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pyaccessors",
-    version="0.0.2d",
+    version="0.0.2e",
     author="David Born",
     author_email="laggs0@gmail.com",
     description="Access lists of dictionaries with their keys' values",

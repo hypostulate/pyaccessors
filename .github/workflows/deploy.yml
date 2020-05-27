@@ -9,11 +9,15 @@ on:
     paths-ignore:
     - '.github/**'
     - 'README.md'
+    tags:
+      - '*.*.*'
   pull_request:
     branches: [ master ]
     paths-ignore:
     - '.github/**'
     - 'README.md'
+    tags:
+      - '*.*.*'
 
 jobs:
   build:
@@ -54,7 +58,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install setuptools wheel twine
     - name: Build and publish
-      if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')
       env:
         TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
         TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
