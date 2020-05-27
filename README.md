@@ -6,6 +6,7 @@
 
 ## Usage
 
+### Grouped Access
 ```python
 from pyaccessors import access
 
