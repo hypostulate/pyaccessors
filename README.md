@@ -1,6 +1,14 @@
 # Pyaccessors: The key to lists
 
+## Install
+
+`pip install pyaccessors`
+
+## Usage
+
 ```python
+from pyaccessors import access
+
 list_of_dicts = [
     {"a": "A1", "b": 1},
     {"a": "A1", "b": 2},
