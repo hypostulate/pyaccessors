@@ -3,3 +3,6 @@ black
 mypy
 coverage
 pytest-cov
+twine
+setuptools
+wheel
