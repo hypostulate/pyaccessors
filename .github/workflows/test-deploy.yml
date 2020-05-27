@@ -6,6 +6,9 @@ name: Deploy to TestPyPi
 on:
   push:
     branches: [ staging ]
+    paths-ignore:
+    - '.github/**'
+    - 'README.md'
 
 jobs:
   build:

@@ -6,8 +6,14 @@ name: Test Suite
 on:
   push:
     branches: [ dev, staging, master ]
+    paths-ignore:
+    - '.github/**'
+    - 'README.md'
   pull_request:
     branches: [ dev, master ]
+    paths-ignore:
+    - '.github/**'
+    - 'README.md'
 
 jobs:
   build:
