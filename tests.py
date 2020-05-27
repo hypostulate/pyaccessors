@@ -116,7 +116,7 @@ def test_access_by_wrong_type():
     ]
 
     with pytest.raises(TypeError):
-        access_dict = access(case, {"A":1})
+        access_dict = access(case, {"A": 1})
 
 
 def test_access_strict_failure():

@@ -19,7 +19,10 @@ DictAccessor = Dict[Union[str, int, float, bool], JsonObject]
 
 
 def access(
-    obj: JsonInput, by: Union[str, List[str], Tuple[str]], strict: bool = False, group: bool = False
+    obj: JsonInput,
+    by: Union[str, List[str], Tuple[str]],
+    strict: bool = False,
+    group: bool = False,
 ) -> Union[DictAccessor, ListAccessor]:
     """Restructures a json-like datastructure as a dictionary where
     the values accessed by `keys` are the dict keys and the underlying objects are the values
@@ -55,7 +58,9 @@ def access(
         raise TypeError(f"'by' must be str, list, or tuple not {type(by)}")
 
     if not isinstance(strict, bool):
-        raise TypeError(f"Argument 'strict' invalid type '{type(strict)}' expected bool")
+        raise TypeError(
+            f"Argument 'strict' invalid type '{type(strict)}' expected bool"
+        )
 
     accessible: Union[DictAccessor, ListAccessor]
     if group:
